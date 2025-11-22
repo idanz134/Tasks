@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  image: python:3.11
+  script:
+    - pip install --upgrade pip setuptools
+    - python setup.py sdist
+    - ls -la dist/
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+test:
+  image: python:3.11
+  script:
+    - python -m unittest discover -v
+
