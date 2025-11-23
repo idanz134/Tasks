@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "app": {
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "tsconfig.json"
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server"
+        }
+      }
+    }
+  }
+}
+
